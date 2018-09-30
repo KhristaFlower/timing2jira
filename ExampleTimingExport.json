@@ -1,0 +1,12 @@
+[
+  {
+    "taskActivityTitle": "BUG-100 Testing A",
+    "startDate": "2018-09-29T08:00:00Z",
+    "duration": 3600
+  },
+  {
+    "taskActivityTitle": "BUG-101 Testing B",
+    "startDate": "2018-09-29T09:00:00Z",
+    "duration": 3600
+  }
+]
