@@ -60,7 +60,6 @@ class Worklog
     {
         return (
             $this->issueKey == $other->getIssueKey() &&
-            $this->duration == $other->getDuration() &&
             strtotime($this->startTime) == strtotime($other->getStartTime())
         );
     }

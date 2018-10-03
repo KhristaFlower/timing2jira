@@ -84,7 +84,11 @@ class Jira
     {
         $issueKey = $newWorklog->getIssueKey();
 
+        print "\nChecking {$newWorklog->getIssueKey()} {$newWorklog->getDescription()}.\n";
+
         if (!$this->cache->isCacheKeySet($issueKey)) {
+            print "Retrieving worklogs for {$newWorklog->getIssueKey()}.\n";
+
             // Retrieve the worklogs from Jira.
             $existingWorklogs = $this->getWorklogs($issueKey);
 
@@ -94,8 +98,11 @@ class Jira
 
         // Check to see if this worklog exists on Jira already.
         if ($this->cache->isUploadedAlready($newWorklog)) {
+            print "Exists already; skipping.\n";
             return;
         }
+
+        print "Uploading worklog.\n";
 
         // Send the new worklog to Jira.
         $requestData = [
